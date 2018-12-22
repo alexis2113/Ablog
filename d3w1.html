@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+
+ 
+
+
+<body>
+
+
+
+    <h3>hide or show elements</h3>
+    <div id="things">
+        miao
+
+    </div>
+
+
+
+
+
+
+
+    <div class="chart"></div>
+
+    <p>
+        <h3>input vars</h3>
+
+
+
+        <input type="text" id="ukey">
+        <button id="getv">select</button>
+        <div id="container"></div>
+    </p>
+
+
+    <p>
+        <h3>some button</h3>
+
+        <div id="herej">
+            <h2>Table Here</h2>
+        </div>
+
+        <div id="option">
+            <input name="updateButton"
+                   type="button"
+                   value="Update"
+                   onclick="updateData()" />
+        </div>
+
+    </p>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+
+        d3.selectAll("div")
+            .on("click", function () {
+
+                var active = this.active ? false : true,
+                    newOpacity = active ? 0 : 1;
+                // Hide or show the elements
+                d3.selectAll("div").style("opacity", newOpacity);
+                d3.selectAll("div").style("opacity", newOpacity);
+                // Update whether or not the elements are active
+                this.active = active;
+            })
+            .active();
+    </script>
+
+
+   
+
+
+
+   
+        <script>
+
+            let strs = "nothing"
+            let final = ""
+
+            // when the input range changes update the circle
+            d3.select("#ukey").on("input", function () {
+                update(this.value);
+            });
+
+            // update the elements
+            function update(newin) {
+                strs = newin
+            }
+
+            d3.select("#getv").on("click", function () {
+                final = strs
+
+            });
+
+
+
+
+
+
+
+            var dataset = [
+                {label: 'Abulia', count: 10 },
+                {label: 'Betelgeuse', count: 20 },
+                {label: 'Cantaloupe', count: 30 },
+                {label: 'Dijkstra', count: 40 }
+        ]
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+          
+
+
+        showselection(dataset)
+
+    </script>
+
+  <script>
+      // make a new function hahah
+
+      let ar=["d","a","hahha","haha"]
+      alert(ar.join("|"))
+
+      Array.prototype.new_join = (function (_super) {
+
+          // return our new `join()` function
+          return function () {
+              alert("new join");
+              return _super.apply(this, arguments);
+          };         // Pass control back to the original join()
+          // by using .apply on `_super`
+
+      })(Array.prototype.join);
+
+      alert(ar.join("|"))
+
+  </script>
+
+
+</body>
+
+
